@@ -30,7 +30,7 @@ namespace ProjectEulerCore
       catch (Exception exception)
       {
         solutionOutput = new SolutionOutput();
-        solutionOutput.Completed = false;
+        solutionOutput.ValidationResult = false;
         solutionOutput.Output = exception.Message;
       }
       return solutionOutput;

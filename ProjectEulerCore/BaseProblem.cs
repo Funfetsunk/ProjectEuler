@@ -19,11 +19,22 @@ namespace ProjectEulerCore
     /// <returns>SolutionOutput object, giving info on result of running the problem</returns>
     internal SolutionOutput Solve()
     {
-      Stopwatch timer = new Stopwatch();
-      timer.Start();
-      SolutionOutput solutionOutput = InnerSolve();
-      timer.Stop();
-      solutionOutput.DurationMilliseconds = timer.Elapsed.TotalMilliseconds;
+      SolutionOutput solutionOutput;
+      if (!ValidationSolve())
+      {
+        solutionOutput = new SolutionOutput();
+        solutionOutput.ValidationResult = false;
+        solutionOutput.Output = "Validation against example failed. Not running full solve";
+      }
+      else
+      {
+        Stopwatch timer = new Stopwatch();
+        timer.Start();
+        solutionOutput = InnerSolve();
+        timer.Stop();
+        solutionOutput.DurationMilliseconds = timer.Elapsed.TotalMilliseconds;
+        solutionOutput.ValidationResult = true;
+      }
       return solutionOutput;  
     }
     /// <summary>
@@ -31,5 +42,10 @@ namespace ProjectEulerCore
     /// </summary>
     /// <returns>SolutionOutput object, giving info on result of running the problem</returns>
     internal abstract SolutionOutput InnerSolve();
+    /// <summary>
+    /// Inheriting classes implement to validation against example given for problem
+    /// </summary>
+    /// <returns>true if the solution give answer to example as expected</returns>
+    internal abstract bool ValidationSolve();
   }
 }
