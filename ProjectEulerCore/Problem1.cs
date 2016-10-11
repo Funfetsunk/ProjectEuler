@@ -42,7 +42,7 @@ namespace ProjectEulerCore
     {
       List<int> numbers = GetListForMulitples(3, numbersBelow);
       numbers.AddRange(GetListForMulitples(5, numbersBelow));
-      return numbers.Sum();
+      return numbers.Distinct().Sum();
     }
 
     /// <summary>
