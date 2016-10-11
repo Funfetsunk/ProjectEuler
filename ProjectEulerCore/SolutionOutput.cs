@@ -6,9 +6,9 @@
   public class SolutionOutput
   {
     /// <summary>
-    /// If problem has been solved
+    /// To check we are getting the right simple answer.
     /// </summary>
-    public bool Completed { get; set; }
+    public bool ValidationResult { get; set; }
     /// <summary>
     /// How long it took to run the solution for problem
     /// </summary>

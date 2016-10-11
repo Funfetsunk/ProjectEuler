@@ -5,7 +5,7 @@ using ProjectEulerCore;
 namespace ProjectEulerRunner
 {
   /// <summary>
-  ///  A program to run the soutions to the Project Euler problems
+  ///  A program to run the solutions to the Project Euler problems
   /// </summary>
   internal class Program
   {
@@ -54,9 +54,9 @@ namespace ProjectEulerRunner
 
       SolutionOutput soultionOutput = SolutionRunner.RunSolution(problemId);
       Trace.WriteLine("Running Problem No. " + problemId);
-      Trace.WriteLine("Problem Output: " +soultionOutput.Output);
+      Trace.WriteLine("Solution Output: " + soultionOutput.Output);
       Trace.WriteLine("DurationMilliseconds: " + soultionOutput.DurationMilliseconds);
-      bool didProblemPass = soultionOutput.Completed;
+      bool didProblemPass = soultionOutput.ValidationResult;
       if (didProblemPass)
         return ExitCode.Ok;
 
