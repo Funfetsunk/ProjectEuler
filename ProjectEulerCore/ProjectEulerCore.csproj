@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseProblem.cs" />
-    <Compile Include="Problem1.cs" />
+    <Compile Include="Solutions\Problem1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolutionOutput.cs" />
     <Compile Include="SolutionRunner.cs" />
